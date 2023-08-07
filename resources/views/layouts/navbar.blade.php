@@ -393,13 +393,13 @@
 	<!-- //@ USER -->
 	<div class="app-navbar-item ms-1 ms-md-3" id="kt_header_user_menu_toggle">
 		<div class="cursor-pointer symbol symbol-circle symbol-35px symbol-md-45px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-			<img src="assets/media/avatars/300-2.jpg" alt="user" />
+			<img src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
 		</div>
 		<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
 			<div class="menu-item px-3">
 				<div class="menu-content d-flex align-items-center px-3">
 					<div class="symbol symbol-50px me-5">
-						<img alt="Logo" src="assets/media/avatars/300-2.jpg" />
+						<img alt="Logo" src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
 					</div>
 					<div class="d-flex flex-column">
 						<div class="fw-bold d-flex align-items-center fs-5">Ogi Setiawan <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Admin</span>
@@ -442,7 +442,7 @@
 			</div>
 			<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
 				<a href="#" class="menu-link px-5">
-					<span class="menu-title position-relative">Language <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English <img class="w-15px h-15px rounded-1 ms-2" src="assets/media/flags/united-states.svg" alt="" />
+					<span class="menu-title position-relative">Language <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('assets/media/flags/united-states.svg') }}" alt="" />
 						</span>
 					</span>
 				</a>
@@ -450,7 +450,7 @@
 					<div class="menu-item px-3">
 						<a href="../../demo38/dist/account/settings.html" class="menu-link d-flex px-5 active">
 							<span class="symbol symbol-20px me-4">
-								<img class="rounded-1" src="assets/media/flags/united-states.svg" alt="" />
+								<img class="rounded-1" src="{{ asset('assets/media/flags/united-states.svg') }}" alt="" />
 							</span>English </a>
 					</div>
 				</div>

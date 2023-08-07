@@ -1,9 +1,9 @@
 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
 	<!-- //@ LOGO SIDEBAR -->
 	<div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-8 pb-2" id="kt_app_sidebar_header">
-		<a href="../../demo38/dist/index.html" class="app-sidebar-logo">
-			<img alt="Logo" src="assets/_custom/media/logos/bm-logo-svg-colour.svg" class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
-			<img alt="Logo" src="assets/_custom/media/logos/bm-logo-svg-transparent.svg" class="h-20px theme-dark-show" />
+		<a href="javascript:void(0);" class="app-sidebar-logo">
+			<img alt="Logo" src="{{ asset('assets/_custom/media/logos/bm-logo-svg-colour.svg') }}" class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
+			<img alt="Logo" src="{{ asset('assets/_custom/media/logos/bm-logo-svg-transparent.svg') }}" class="h-20px theme-dark-show" />
 		</a>
 		<div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-sm btn-icon bg-light btn-color-gray-700 btn-active-color-primary d-none d-lg-flex rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
 			<i class="ki-outline ki-text-align-right rotate-180 fs-1"></i>
@@ -18,21 +18,20 @@
 					<div class="app-sidebar-separator separator"></div>
 					<div class="d-flex flex-center flex-column py-0">
 						<div class="symbol symbol-70px symbol-circle mb-2">
-							<img src="assets/media/avatars/300-2.jpg">
+							<img src="{{ asset('assets/media/avatars/300-2.jpg') }}">
 						</div>
-						<span class="fs-4 fw-bold">Ogi Setiawan</span>
-						<span class="fw-bold fs-8 text-muted">Software Engineer</span>
+						<span class="fs-4 fw-bold">Muhammad Ibnu</span>
+						<span class="badge badge-light-success">Administrator</span>
 					</div>
 				</div>
 			</div>
 
 			<div id="#menu" data-kt-menu="true" data-kt-menu-expand="false" class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary mt-0">
 				<div class="menu-item mb-2">
-					<!-- <div class="menu-heading  fs-7 fw-bold">Menu</div> -->
 					<div class="app-sidebar-separator separator"></div>
 				</div>
 				<div class="menu-item">
-					<a class="menu-link active " href="javascript:void(0);">
+					<a class="menu-link {{ Request::is('dashboard') ? 'active' : '' }} " href="{{ url('dashboard') }}">
 						<span class="menu-icon">
 							<i class="ki-outline ki-chart-pie-simple fs-2 text-danger"></i>
 						</span>
@@ -40,16 +39,16 @@
 					</a>
 				</div>
 				<!-- //@ MASTER DATA -->
-				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+				<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all-employee') ? 'hover show' : '' }}">
 					<span class="menu-link">
 						<span class="menu-icon">
 							<i class="ki-outline ki-cube-2 fs-2 text-gray"></i>
 						</span>
-						<span class="menu-title ">Database</span>
+						<span class="menu-title">Database</span>
 						<span class="menu-arrow"></span>
 					</span>
 					<div class="menu-sub menu-sub-accordion">
-						<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+						<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all-employee') ? 'hover show' : '' }}">
 							<span class="menu-link">
 								<span class="menu-bullet">
 									<span class="bullet bullet-dot"></span>
@@ -59,7 +58,7 @@
 							</span>
 							<div class="menu-sub menu-sub-accordion">
 								<div class="menu-item">
-									<a class="menu-link" href="javascript:void(0);">
+									<a class="menu-link {{ Request::is('database/employee/all-employee') ? 'active' : '' }}" href="{{ url('database/employee/all-employee') }}">
 										<span class="menu-bullet">
 											<span class="bullet bullet-dot"></span>
 										</span>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- //@ ASSETS -->
-    <link rel="shortcut icon" href="assets/_custom/media/logos/bm-icon.svg" />
+    <link rel="shortcut icon" href="{{ asset('assets/_custom/media/logos/bm-icon.svg') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!-- //@ CSS -->
     <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -46,7 +46,7 @@
                             <i class="ki-outline ki-abstract-14 fs-2"></i>
                         </div>
                         <a href="{{ route('dashboard') }}">
-                            <img alt="BM" src="assets/_custom/media/logos/bm-icon.svg" class="h-30px" />
+                            <img alt="BM" src="{{ asset('assets/_custom/media/logos/bm-icon.svg') }}" class="h-30px" />
                         </a>
                     </div>
                     @include('layouts.navbar')
@@ -58,7 +58,11 @@
 
                 <!-- //@ CONTENT -->
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    @yield('content')
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <div id="kt_app_content" class="app-content flex-column-fluid">
+                            @yield('content')
+                        </div>
+                    </div>
                     @include('layouts.footer')
                 </div>
             </div>
