@@ -30,7 +30,36 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/database/employee/all-employee', [EmployeeController::class, 'index']);
+    Route::get('/database/employee/all_employee/get', [EmployeeController::class, 'create']);
+    Route::get('/database/employee/all_employee', [EmployeeController::class, 'index']);
 });
+
+// @ ARTISAN ROUTE
+Route::get('optimize', function () {
+    Artisan::call('optimize');
+    return '<h1>Reoptimized class loader</h1>';
+});
+Route::get('route-clear', function () {
+    Artisan::call('route:clear');
+    return '<h1>Route cache cleared</h1>';
+});
+Route::get('cache-clear', function () {
+    Artisan::call('cache:clear');
+    return '<h1>Cache facade value cleared</h1>';
+});
+Route::get('view-clear', function () {
+    Artisan::call('view:clear');
+    return '<h1>View cache cleared</h1>';
+});
+Route::get('config-cache', function () {
+    Artisan::call('config:cache');
+    return '<h1>Config cache cleared</h1>';
+});
+
+Route::get('all-clear', function () {
+    Artisan::call('optimize:clear');
+    return '<h1>All cache cleared</h1>';
+});
+
 
 require __DIR__.'/auth.php';

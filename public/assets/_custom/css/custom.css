@@ -22,7 +22,6 @@
     color: var(--pink) !important;
 }
 .app-footer {
-    position: absolute;
     bottom: 0;
 }
 

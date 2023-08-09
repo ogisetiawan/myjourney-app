@@ -39,7 +39,7 @@
 					</a>
 				</div>
 				<!-- //@ MASTER DATA -->
-				<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all-employee') ? 'hover show' : '' }}">
+				<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all_employee') ? 'hover show' : '' }}">
 					<span class="menu-link">
 						<span class="menu-icon">
 							<i class="ki-outline ki-cube-2 fs-2 text-gray"></i>
@@ -48,7 +48,7 @@
 						<span class="menu-arrow"></span>
 					</span>
 					<div class="menu-sub menu-sub-accordion">
-						<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all-employee') ? 'hover show' : '' }}">
+						<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::is('database/employee/all_employee') ? 'hover show' : '' }}">
 							<span class="menu-link">
 								<span class="menu-bullet">
 									<span class="bullet bullet-dot"></span>
@@ -58,7 +58,7 @@
 							</span>
 							<div class="menu-sub menu-sub-accordion">
 								<div class="menu-item">
-									<a class="menu-link {{ Request::is('database/employee/all-employee') ? 'active' : '' }}" href="{{ url('database/employee/all-employee') }}">
+									<a class="menu-link {{ Request::is('database/employee/all_employee') ? 'active' : '' }}" href="{{ url('database/employee/all_employee') }}">
 										<span class="menu-bullet">
 											<span class="bullet bullet-dot"></span>
 										</span>

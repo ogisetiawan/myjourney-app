@@ -9,11 +9,12 @@
     <link rel="shortcut icon" href="{{ asset('assets/_custom/media/logos/bm-icon.svg') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!-- //@ CSS -->
-    <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/new-style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/_custom/css/custom.css') }}" rel="stylesheet" type="text/css" />
+    <!-- //@ JS -->
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
     <script>
         var defaultThemeMode = "light";
         var themeMode;
@@ -59,6 +60,9 @@
                 <!-- //@ CONTENT -->
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                     <div class="d-flex flex-column flex-column-fluid">
+                        @if(Request::segment(1) !== 'dashboard')
+                            @include('layouts.breadcrumb')
+                        @endif
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             @yield('content')
                         </div>
@@ -69,15 +73,16 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <!-- <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script> -->
+    <!-- <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/search/horizontal.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/projects/users/users.js') }}"></script>
     <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
     <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script> -->
 </body>
 
 </html>
