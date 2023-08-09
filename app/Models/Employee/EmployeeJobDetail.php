@@ -35,6 +35,10 @@ class EmployeeJobDetail extends Model
         'id_employee_job_header',
     ];
 
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class, 'id_employee');
+    }
     public function employeeJobHeader()
     {
         return $this->belongsTo(EmployeeJobHeader::class, 'id_employee_job_header');

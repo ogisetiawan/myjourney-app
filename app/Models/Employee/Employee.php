@@ -33,6 +33,11 @@ class Employee extends Model
     protected $timeStamps = 'Y-m-d H:i:s';
     protected $dates = ['deleted_at'];
 
+    public function user()
+    {
+        return $this->hasOne(\App\Models\User::class, 'id_employee');
+    }
+
     public function employeeContact()
     {
         return $this->hasOne(EmployeeContact::class, 'id_employee');
@@ -53,7 +58,7 @@ class Employee extends Model
     }
     public function employeeJobDetail()
     {
-        return $this->hasOne(EmployeeJobDetail::class, 'id_employee');
+        return $this->hasOne(EmployeeJobDetail::class, 'id_employee', 'id_employee');
     }
     public function employeeFormalEducation()
     {
