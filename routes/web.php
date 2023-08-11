@@ -30,8 +30,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/database/employee/all_employee/get', [EmployeeController::class, 'create']);
-    Route::get('/database/employee/all_employee', [EmployeeController::class, 'index']);
+    Route::get('/database/employee/all_employee/get', [EmployeeController::class, 'list']);
+    // Route::get('/database/employee/all_employee', [EmployeeController::class, 'index']);
+    Route::resource('/database/employee/all_employee', EmployeeController::class);
+
 });
 
 // @ ARTISAN ROUTE

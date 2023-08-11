@@ -23,7 +23,7 @@
             <!--begin::Card title-->
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
-                <a href="#" class="btn btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
+                <a href="{{ url('database/employee/all_employee/create') }}" class="btn btn-light btn-active-primary">
                     <span class="svg-icon svg-icon-3">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
@@ -62,6 +62,7 @@
         </div>
     </div>
 </div>
+
 <script src="{{ asset('/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 <script>
     "use strict";
@@ -82,7 +83,7 @@
                         data: 'code_employee',
                         render: function(data, type, row) {
                             return ` 
-                                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#kt_modal_2" class="order-2 order-md-1">
+                                <a href="{{ url('database/employee/all_employee/') }}/${row.id_employee}" class="order-2 order-md-1">
                                     <span class="text-dark fw-bold text-hover-primary fs-6">${data}</span>
                                 </a>
                             `;
@@ -95,11 +96,11 @@
                             <div class="d-flex align-items-center">
                             <div class="me-5 position-relative">
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img src=\"{{ asset('assets/media/avatars/300-6.jpg') }}\" class="w-100" />
+                                    <img src=\"{{ asset('assets/media/avatars/') }}/${row.photo}\" class="w-100" />
                                 </div>
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                                <a href="" class="mb-1 text-gray-800 text-hover-primary">${row.name}</a>
+                                <a href="{{ url('database/employee/all_employee/') }}/${row.id_employee}" class="mb-1 text-gray-800 text-hover-primary">${row.name}</a>
                                 <div class="fw-semibold fs-6 text-gray-400">${row.email}</div>
                             </div>
                         </div>

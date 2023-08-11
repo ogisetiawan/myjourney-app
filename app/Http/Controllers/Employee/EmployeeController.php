@@ -49,7 +49,7 @@ class EmployeeController extends Controller
         //     echo "<br>";
         // }
         // dd();
-        return view('employee/employee');
+        return view('employee/all_employee/index');
     }
 
     /**
@@ -59,32 +59,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        $employee = Employee::all();
-        return Datatables::of($employee)->addColumn('email', function ($user) {
-            return (!empty($user->user->email) ? $user->user->email : null);
-        })->addColumn('employee_mobile_number', function ($contact) {
-            return (!empty($contact->employeeContact->employee_mobile_number) ? $contact->employeeContact->employee_mobile_number : null);
-        })->addColumn('country', function ($job) {
-            return (!empty($job->employeeJobDetail->country) ? $job->employeeJobDetail->country : null);
-        })->addColumn('company', function ($job) {
-            return (!empty($job->employeeJobDetail->company) ? $job->employeeJobDetail->company : null);
-        })->addColumn('work_location', function ($job) {
-            return (!empty($job->employeeJobDetail->work_location) ? $job->employeeJobDetail->work_location : null);
-        })->addColumn('divison', function ($job) {
-            return (!empty($job->employeeJobDetail->division) ? $job->employeeJobDetail->division : null);
-        })->addColumn('department', function ($job) {
-            return (!empty($job->employeeJobDetail->department) ? $job->employeeJobDetail->department : null);
-        })->addColumn('hire_date', function ($job) {
-            return (!empty($job->employeeStatus->hire_date) ? $job->employeeStatus->hire_date : null);
-        })->addColumn('years_of_service', function ($job) {
-            return (!empty($job->employeeStatus->years_of_service) ? $job->employeeStatus->years_of_service : null);
-        })->addColumn('job_title', function ($job) {
-            return (!empty($job->employeeJobDetail->job_title) ? $job->employeeJobDetail->job_title : null);
-        })->addColumn('direct_superior', function ($job) {
-            return (!empty($job->employeeJobHeader->direct_superior) ? $job->employeeJobHeader->direct_superior : null);
-        })->addColumn('employee_status', function ($job) {
-            return (!empty($job->employeeStatus->employee_status) ? $job->employeeStatus->employee_status : null);
-        })->toJson();
+        return view('employee/all_employee/create');
     }
 
     /**
@@ -104,9 +79,10 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show($id)
     {
-        //
+        $employee = Employee::find($id);
+        return view('employee/all_employee/show', compact('employee'));
     }
 
     /**
@@ -142,4 +118,35 @@ class EmployeeController extends Controller
     {
         //
     }
+
+    public function list(){
+        $employee = Employee::all();
+        return Datatables::of($employee)->addColumn('email', function ($user) {
+            return (!empty($user->user->email) ? $user->user->email : null);
+        })->addColumn('employee_mobile_number', function ($contact) {
+            return (!empty($contact->employeeContact->employee_mobile_number) ? $contact->employeeContact->employee_mobile_number : null);
+        })->addColumn('country', function ($job) {
+            return (!empty($job->employeeJobDetail->country) ? $job->employeeJobDetail->country : null);
+        })->addColumn('company', function ($job) {
+            return (!empty($job->employeeJobDetail->company) ? $job->employeeJobDetail->company : null);
+        })->addColumn('work_location', function ($job) {
+            return (!empty($job->employeeJobDetail->work_location) ? $job->employeeJobDetail->work_location : null);
+        })->addColumn('divison', function ($job) {
+            return (!empty($job->employeeJobDetail->division) ? $job->employeeJobDetail->division : null);
+        })->addColumn('department', function ($job) {
+            return (!empty($job->employeeJobDetail->department) ? $job->employeeJobDetail->department : null);
+        })->addColumn('hire_date', function ($job) {
+            return (!empty($job->employeeStatus->hire_date) ? $job->employeeStatus->hire_date : null);
+        })->addColumn('years_of_service', function ($job) {
+            return (!empty($job->employeeStatus->years_of_service) ? $job->employeeStatus->years_of_service : null);
+        })->addColumn('job_title', function ($job) {
+            return (!empty($job->employeeJobDetail->job_title) ? $job->employeeJobDetail->job_title : null);
+        })->addColumn('direct_superior', function ($job) {
+            return (!empty($job->employeeJobHeader->direct_superior) ? $job->employeeJobHeader->direct_superior : null);
+        })->addColumn('employee_status', function ($job) {
+            return (!empty($job->employeeStatus->employee_status) ? $job->employeeStatus->employee_status : null);
+        })->toJson();
+    }
+
+    
 }
