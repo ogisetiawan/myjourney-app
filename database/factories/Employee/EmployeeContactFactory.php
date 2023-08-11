@@ -25,13 +25,7 @@ class EmployeeContactFactory extends Factory
             'permanent_address_identity_card' => $this->faker->address,
             'address_residence' => $this->faker->address,
             // 'id_employee' => function () {
-            //     // Menggunakan factory untuk Employee untuk mengisi kolom 'id_employee'
             //     return \App\Models\Employee\Employee::factory()->create()->id_employee;
-            // },
-            // 'id_employee' => Employee::pluck('id_employee')[$this->faker->numberBetween(1,Employee::count()-1)],
-            // 'id_employee' => $this->faker->unique(true)->numberBetween(1, 10),
-            // 'id_employee' => function () {
-            //     return EmployeeContact::factory()->count(1)->create(['id_employee' => $this->faker->unique(true)->numberBetween(1, 10)]);
             // },
             'id_employee' => Employee::factory()
         ];

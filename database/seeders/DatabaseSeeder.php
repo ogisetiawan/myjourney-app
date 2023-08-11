@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Employee\Employee;
 use App\Models\Employee\EmployeeBank;
 use App\Models\Employee\EmployeeContact;
@@ -28,21 +29,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Employee::factory()
-        ->count(10)
-        ->has(EmployeeContact::factory())
-        ->has(EmployeeOtherInformation::factory())
-        ->has(EmployeeStatus::factory())
-        ->has(EmployeeJobHeader::factory())
-        ->has(EmployeeJobDetail::factory())
-        ->has(EmployeeFormalEducation::factory())
-        ->has(EmployeeInformalEducation::factory())
-        ->has(EmployeeWorkHistory::factory())
-        ->has(EmployeeFamilyInformation::factory())
-        ->has(EmployeeLegalIdentity::factory())
-        ->has(EmployeeBank::factory())
-        ->has(EmployeeTax::factory())
-        ->has(EmployeeInsurance::factory())
-        ->create();
+        // EmployeeJobDetail::factory(10)->create();
+
+        // Employee::factory()
+        // ->count(10)
+        // ->has(User::factory())
+        // ->has(EmployeeOtherInformation::factory())
+        // ->has(EmployeeStatus::factory())
+        // ->has(EmployeeJobHeader::factory())
+        // // ->has(EmployeeJobDetail::factory())
+        // ->has(EmployeeFormalEducation::factory())
+        // ->has(EmployeeInformalEducation::factory())
+        // ->has(EmployeeWorkHistory::factory())
+        // ->has(EmployeeFamilyInformation::factory())
+        // ->has(EmployeeLegalIdentity::factory())
+        // ->has(EmployeeBank::factory())
+        // ->has(EmployeeTax::factory())
+        // ->has(EmployeeInsurance::factory())
+        // ->create();
     }
 }

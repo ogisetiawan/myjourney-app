@@ -40,8 +40,8 @@ class EmployeeJobDetailFactory extends Factory
             'movement_type' => $this->faker->optional()->word,
             'movement_date' => $this->faker->optional()->date,
             'career_level' => $this->faker->word,
-            'id_employee' => Employee::factory(),
-            'id_employee_job_header' => EmployeeJobHeader::factory(),
+            'id_employee' => 1,
+            'id_employee_job_header' => 1,
         ];
     }
 }

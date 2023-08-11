@@ -19,7 +19,7 @@ class EmployeeFactory extends Factory
             'salutation' => $this->faker->title,
             'name' => $this->faker->name,
             'nick_name' => $this->faker->firstName,
-            'photo' => null, // Tergantung dari data gambar yang ingin di-generate
+            'photo' => null,
             'gender' => $this->faker->randomElement(['Male', 'Female']),
             'birth_date' => $this->faker->date,
             'age' => $this->faker->numberBetween(18, 60),
